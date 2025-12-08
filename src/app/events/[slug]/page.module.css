@@ -1,0 +1,100 @@
+.wrapper {
+    padding-bottom: 6rem;
+}
+
+.cover {
+    height: 400px;
+    background: linear-gradient(to bottom, #222, var(--bg-primary));
+    position: relative;
+    width: 100%;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    margin-top: -80px;
+    position: relative;
+    z-index: 10;
+}
+
+.main {
+    padding-right: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.description {
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    white-space: pre-wrap;
+}
+
+.sidebar {
+    position: sticky;
+    top: 8rem;
+    height: fit-content;
+}
+
+.registerCard {
+    padding: 2rem;
+}
+
+.host {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.hostName {
+    font-weight: 600;
+}
+
+.hostLabel {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        z-index: 100;
+        padding: 1rem;
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border-color);
+    }
+
+    .registerCard {
+        padding: 0;
+        background: none;
+        border: none;
+        backdrop-filter: none;
+    }
+}
