@@ -99,7 +99,7 @@ export async function registerForEvent(eventId: string, email: string, ticketId:
         data: { quantity: { decrement: 1 } }
     });
 
-    await prisma.registration.create({
+    const registration = await prisma.registration.create({
         data: {
             userId: user.id,
             eventId,
@@ -107,5 +107,5 @@ export async function registerForEvent(eventId: string, email: string, ticketId:
         },
     });
 
-    return { success: true };
+    return { success: true, registrationId: registration.id };
 }
