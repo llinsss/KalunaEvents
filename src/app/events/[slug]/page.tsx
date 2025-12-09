@@ -12,7 +12,7 @@ export default async function EventPage(props: Props) {
     const params = await props.params;
     const event = await prisma.event.findUnique({
         where: { slug: params.slug },
-        include: { host: true },
+        include: { host: true, tickets: true },
     });
 
     if (!event) {
@@ -56,9 +56,9 @@ export default async function EventPage(props: Props) {
                     <div className={`glass-panel ${styles.registerCard}`}>
                         <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem' }}>Registration</h3>
                         <p style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
-                            Free Event based on invite.
+                            Select a ticket to join.
                         </p>
-                        <RegistrationFlow eventId={event.id} />
+                        <RegistrationFlow eventId={event.id} tickets={event.tickets} />
                     </div>
                 </aside>
             </div>
